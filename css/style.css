@@ -26,13 +26,13 @@ main {
     position: absolute;
     background-image: linear-gradient(
             to right,
-            rgba(225, 86, 34, 0.5),
-            rgba(255, 153, 0, 0.5)
+            rgba(225, 86, 34, 0.7) 45%,
+            rgba(255, 153, 0, 0.6) 100%
         ),
         url("../assets/images/ghana-sunset.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.5;
+    opacity: 0.7;
     z-index: -1;
     top: 50%;
     left: 50%;
