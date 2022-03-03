@@ -4,3 +4,39 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+main {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.video {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.image {
+    position: absolute;
+    background-image: linear-gradient(
+            to right,
+            rgba(225, 86, 34, 0.5),
+            rgba(255, 153, 0, 0.5)
+        ),
+        url("../assets/images/ghana-sunset.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+}
