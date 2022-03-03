@@ -10,9 +10,14 @@ main {
     height: 100vh;
     position: relative;
     overflow: hidden;
+    padding: 10%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.video {
+main .video {
     position: absolute;
     z-index: -1;
     top: 50%;
@@ -22,21 +27,82 @@ main {
     min-height: 100%;
 }
 
-.image {
+main .image {
     position: absolute;
     background-image: linear-gradient(
             to right,
-            rgba(225, 86, 34, 0.7) 45%,
-            rgba(255, 153, 0, 0.6) 100%
+            rgba(225, 86, 34, 0.8) 45%,
+            rgba(255, 153, 0, 0.7) 100%
         ),
         url("../assets/images/ghana-sunset.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.7;
+    opacity: 0.8;
     z-index: -1;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     min-width: 100%;
     min-height: 100%;
+}
+
+main .infobox {
+    width: 60vw;
+    height: auto;
+    padding: 10%;
+    background: linear-gradient(
+        to right,
+        rgba(225, 86, 34, 0.5) 45%,
+        rgba(255, 153, 0, 0.4) 100%
+    );
+    backdrop-filter: blur(0.1vw);
+    border-radius: 1vw;
+}
+
+main .infobox h1 {
+    color: #fff;
+    font-size: 2.5vw;
+    margin-bottom: 3%;
+}
+
+main .infobox h2 {
+    text-align: justify;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.3vw;
+    margin-bottom: 3%;
+}
+
+main .infobox h3 {
+    color: #fff;
+    font-size: 1.2vw;
+    margin-bottom: 3%;
+    font-weight: 500;
+}
+
+main form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main form label input {
+    padding: 0 2vw;
+    height: 3vw;
+    border-radius: 0.5vw 0 0 0.5vw;
+    font-size: 0.9vw;
+    color: rgba(225, 86, 34, 1);
+    border: none;
+    outline: none;
+}
+
+main form input {
+    cursor: pointer;
+    padding: 0 2vw;
+    height: 3vw;
+    border-radius: 0 0.5vw 0.5vw 0;
+    font-size: 0.9vw;
+    color: rgba(225, 86, 34, 1);
+    border: none;
+    outline: none;
 }
