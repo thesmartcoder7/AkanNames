@@ -1,3 +1,8 @@
+// DOM variables
+let title = document.querySelector(".title");
+let description = document.querySelector(".description");
+let callToAction = document.querySelector(".cta");
+
 // form variables
 let form = document.querySelector("#dateform");
 let date = document.querySelector("#date");
@@ -26,9 +31,14 @@ form.addEventListener("submit", (e) => {
     let weekDay = daysOfWeek[day];
     let personality = getPersonality(gender, day);
 
-    console.log(`You were born on a ${weekDay}`);
-    console.log(`Your Akan name is ${getPersonality(gender, day)[1]}`);
-    console.log(getPersonality(gender, day)[0]);
+    title.innerHTML = `Your Akan name is ${personality[1].replace(/^\w/, (c) =>
+        c.toUpperCase()
+    )}<br>( ${weekDay.replace(/^\w/, (c) => c.toUpperCase())} Born )`;
+    description.innerHTML = personality[0];
+    title.style = "animation: appear 3s";
+    description.style = "animation: appear 3s";
+    callToAction.style = "display: none";
+    form.style = "display: none";
 });
 
 // A function to get gender related day personalities
