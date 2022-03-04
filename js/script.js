@@ -1,6 +1,25 @@
 //form variables
 let form = document.querySelector("#dateform");
 let date = document.querySelector("#date");
+const maleDayNames = [
+    "kwasi",
+    "kwadwo",
+    "kwabena",
+    "kwaku",
+    "yaw",
+    "kofi",
+    "kwame",
+];
+
+const femaleDayNames = [
+    "akosua",
+    "adwoa",
+    "abenaa",
+    "akua",
+    "yaa",
+    "afua",
+    "ama",
+];
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -9,7 +28,7 @@ form.addEventListener("submit", (e) => {
 });
 
 //get gender related day personalities
-function getCharacter(gender, day) {
+function getPersonality(gender, day) {
     let maleDays = [
         "Sunday born males are also vibrant characters as they are depicted by their core character trait they have the strength and are often resilient when pursuing new ventures. Sunday born males can be sensitive people which, can make them overreact in some situations. However, beneath all their sensitivity, you will find happy, passionate souls.",
         "Monday born males are sensitive at heart and emotional. They are dynamic individuals which, makes them open to hearing ideas from people. They are the perfect type of people to hear unbiased opinions from. Though they can be emotional, they also love fun times and can be generous.",
