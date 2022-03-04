@@ -49,7 +49,7 @@ main .image {
 main .infobox {
     width: 60vw;
     height: auto;
-    padding: 10%;
+    padding: 5% 10%;
     background: linear-gradient(
         to right,
         rgba(225, 86, 34, 0.5) 45%,
