@@ -144,3 +144,22 @@ main form input {
     border: none;
     outline: none;
 }
+
+main .infobox .btn-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .infobox button {
+    align-self: center;
+    display: none;
+    padding: 0 2vw;
+    height: 3vw;
+    border-radius: 0.5vw;
+    font-size: 0.9vw;
+    color: rgba(225, 86, 34, 1);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

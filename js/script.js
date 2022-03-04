@@ -2,6 +2,7 @@
 let title = document.querySelector(".title");
 let description = document.querySelector(".description");
 let callToAction = document.querySelector(".cta");
+let refresgBtn = document.querySelector(".button");
 
 // form variables
 let form = document.querySelector("#dateform");
@@ -102,4 +103,9 @@ form.addEventListener("submit", (e) => {
     description.style = "animation: appear 3s";
     callToAction.style = "display: none";
     form.style = "display: none";
+    refresgBtn.style = "display: block; animation: appear 3s;";
+});
+
+refresgBtn.addEventListener("click", () => {
+    window.location.reload();
 });
