@@ -162,4 +162,5 @@ main .infobox button {
     border: none;
     outline: none;
     cursor: pointer;
+    margin-top: 3%;
 }
