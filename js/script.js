@@ -17,30 +17,6 @@ const daysOfWeek = [
     "saturday",
 ];
 
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    let gender = form.gender.value;
-    if (date.value === "") {
-        alert("Please provide a valid date");
-        return;
-    } else if (gender === "") {
-        alert("Please fill in your gender");
-        return;
-    }
-    let day = getWeekDay(date.value);
-    let weekDay = daysOfWeek[day];
-    let personality = getPersonality(gender, day);
-
-    title.innerHTML = `Your Akan name is ${personality[1].replace(/^\w/, (c) =>
-        c.toUpperCase()
-    )}<br>( ${weekDay.replace(/^\w/, (c) => c.toUpperCase())} Born )`;
-    description.innerHTML = personality[0];
-    title.style = "animation: appear 3s";
-    description.style = "animation: appear 3s";
-    callToAction.style = "display: none";
-    form.style = "display: none";
-});
-
 // A function to get gender related day personalities
 function getPersonality(gender, day) {
     const maleDayNames = [
@@ -63,6 +39,7 @@ function getPersonality(gender, day) {
         "ama",
     ];
 
+    // male day personalities
     let maleDays = [
         "Sunday born males are also vibrant characters as they are depicted by their core character trait they have the strength and are often resilient when pursuing new ventures. Sunday born males can be sensitive people which, can make them overreact in some situations. However, beneath all their sensitivity, you will find happy, passionate souls.",
         "Monday born males are sensitive at heart and emotional. They are dynamic individuals which, makes them open to hearing ideas from people. They are the perfect type of people to hear unbiased opinions from. Though they can be emotional, they also love fun times and can be generous.",
@@ -73,6 +50,7 @@ function getPersonality(gender, day) {
         "Kwame is straightforward. He is steadfast in his ability to pick a cause and remain dedicated to it. He is very focused and may come off as abrasive. They often hold on to traditional beliefs and can be very disciplined.",
     ];
 
+    // female day personalities
     let femaleDays = [
         "Sunday born females are principled, they often say things as it is, they are fearless and may border on the edge of arrogance because they do not mince their words when stating their opinions on a subject. Beneath the hard exterior, however, Sunday born females can be delightfully warm and fun to be around when you get to know them.",
         "Monday born females love to have fun and are full of life. They have an inherent ability to put people's interests above their own as they love to care for others. Being peaceful people, they love to see justice done where there is perceived injustice, and they can because of their over caring nature be stubborn and persistent.",
@@ -100,3 +78,28 @@ function getWeekDay(date) {
 
     return fullDate.getDay();
 }
+
+// A form submission triggered function
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let gender = form.gender.value;
+    if (date.value === "") {
+        alert("Please provide a valid date");
+        return;
+    } else if (gender === "") {
+        alert("Please fill in your gender");
+        return;
+    }
+    let day = getWeekDay(date.value);
+    let weekDay = daysOfWeek[day];
+    let personality = getPersonality(gender, day);
+
+    title.innerHTML = `Your Akan name is ${personality[1].replace(/^\w/, (c) =>
+        c.toUpperCase()
+    )}<br>( ${weekDay.replace(/^\w/, (c) => c.toUpperCase())} Born )`;
+    description.innerHTML = personality[0];
+    title.style = "animation: appear 3s";
+    description.style = "animation: appear 3s";
+    callToAction.style = "display: none";
+    form.style = "display: none";
+});
