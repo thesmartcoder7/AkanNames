@@ -1,34 +1,58 @@
-//form variables
+// form variables
 let form = document.querySelector("#dateform");
 let date = document.querySelector("#date");
-const maleDayNames = [
-    "kwasi",
-    "kwadwo",
-    "kwabena",
-    "kwaku",
-    "yaw",
-    "kofi",
-    "kwame",
-];
 
-const femaleDayNames = [
-    "akosua",
-    "adwoa",
-    "abenaa",
-    "akua",
-    "yaa",
-    "afua",
-    "ama",
+const daysOfWeek = [
+    "sunday",
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thursday",
+    "friday",
+    "saturday",
 ];
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     let gender = form.gender.value;
-    console.log(gender, date.value);
+    if (date.value === "") {
+        alert("Please provide a valid date");
+        return;
+    } else if (gender === "") {
+        alert("Please fill in your gender");
+        return;
+    }
+    let day = getWeekDay(date.value);
+    let weekDay = daysOfWeek[day];
+    let personality = getPersonality(gender, day);
+
+    console.log(`You were born on a ${weekDay}`);
+    console.log(`Your Akan name is ${getPersonality(gender, day)[1]}`);
+    console.log(getPersonality(gender, day)[0]);
 });
 
-//get gender related day personalities
+// A function to get gender related day personalities
 function getPersonality(gender, day) {
+    const maleDayNames = [
+        "kwasi",
+        "kwadwo",
+        "kwabena",
+        "kwaku",
+        "yaw",
+        "kofi",
+        "kwame",
+    ];
+
+    const femaleDayNames = [
+        "akosua",
+        "adwoa",
+        "abenaa",
+        "akua",
+        "yaa",
+        "afua",
+        "ama",
+    ];
+
     let maleDays = [
         "Sunday born males are also vibrant characters as they are depicted by their core character trait they have the strength and are often resilient when pursuing new ventures. Sunday born males can be sensitive people which, can make them overreact in some situations. However, beneath all their sensitivity, you will find happy, passionate souls.",
         "Monday born males are sensitive at heart and emotional. They are dynamic individuals which, makes them open to hearing ideas from people. They are the perfect type of people to hear unbiased opinions from. Though they can be emotional, they also love fun times and can be generous.",
@@ -50,8 +74,19 @@ function getPersonality(gender, day) {
     ];
 
     if (gender === "male") {
-        return maleDays[day];
+        return [maleDays[day], maleDayNames[day]];
     } else {
-        return femaleDays[day];
+        return [femaleDays[day], femaleDayNames[day]];
     }
+}
+
+// A function to get the day of the week
+function getWeekDay(date) {
+    let fullDate = new Date(
+        Number(date.substring(0, 4)),
+        Number(date.substring(5, 7) - 1),
+        Number(date.substring(8, 10))
+    );
+
+    return fullDate.getDay();
 }
