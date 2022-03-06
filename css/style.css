@@ -246,8 +246,16 @@ main form label input {
     border-radius: 0.5vw;
     font-size: 0.9vw;
     color: rgba(225, 86, 34, 1);
+    background-color: #fff;
     border: none;
     outline: none;
+}
+
+/* test code */
+input[type="date"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 @media screen and (max-width: 500px) {
@@ -290,6 +298,7 @@ main form input {
 }
 
 main form input[type="submit"] {
+    background-color: #fff;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -305,10 +314,6 @@ main form input[type="submit"] {
         color: rgba(225, 86, 34, 1);
         border: none;
         outline: none;
-    }
-
-    main form input[type="radio"] {
-        font-size: 1vw;
     }
 }
 @media screen and (min-width: 501px) and (max-width: 800px) {
