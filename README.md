@@ -14,7 +14,7 @@
 
 ## Description
 
-This is an application that generates Ghanian names from the Akan heritage. It also gives information about an individuals personality
+This is an application that generates Ghanian names from the Akan heritage. It also gives information about an individuals personality. Visit [live site](https://thesmartcoder7.github.io/AkanNames/)
 
 ## Usage
 
@@ -56,7 +56,7 @@ Feel free to fork the project and have fun with it. Happy coding!
 
 ## Licence
 
-[MIT Licence](LICENSE)
+Copyright (c) Samuel Martins - [MIT Licence](LICENSE)
 
 ## Author Info
 
