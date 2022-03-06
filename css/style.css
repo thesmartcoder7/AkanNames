@@ -183,6 +183,7 @@ main .infobox h3 {
 }
 
 main form {
+    -webkit-appearance: none;
     display: flex;
     flex-direction: column;
     align-items: center;
