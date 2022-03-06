@@ -91,6 +91,13 @@ main .infobox {
         padding: 10%;
     }
 }
+@media screen and (min-width: 801px) and (max-width: 1050px) {
+    main .infobox {
+        width: 90vw;
+        height: auto;
+        padding: 7% 10%;
+    }
+}
 
 main .infobox h1 {
     color: #fff;
@@ -107,6 +114,12 @@ main .infobox h1 {
 @media screen and (min-width: 501px) and (max-width: 800px) {
     main .infobox h1 {
         font-size: 4vw;
+        margin-bottom: 5%;
+    }
+}
+@media screen and (min-width: 801px) and (max-width: 1050px) {
+    main .infobox h1 {
+        font-size: 3.5vw;
         margin-bottom: 5%;
     }
 }
@@ -133,6 +146,13 @@ main .infobox h2 {
         margin-bottom: 5%;
     }
 }
+@media screen and (min-width: 801px) and (max-width: 1050px) {
+    main .infobox h2 {
+        font-weight: 500;
+        font-size: 1.7vw;
+        margin-bottom: 5%;
+    }
+}
 
 main .infobox h3 {
     color: #fff;
@@ -151,6 +171,13 @@ main .infobox h3 {
     main .infobox h3 {
         font-size: 2.2vw;
         margin-bottom: 7%;
+        font-weight: 500;
+    }
+}
+@media screen and (min-width: 801px) and (max-width: 1050px) {
+    main .infobox h3 {
+        font-size: 1.7vw;
+        margin-bottom: 5%;
         font-weight: 500;
     }
 }
@@ -194,6 +221,13 @@ main form .gender label span {
         cursor: pointer;
     }
 }
+@media screen and (min-width: 801px) and (max-width: 1050px) {
+    main form .gender label span {
+        font-size: 1.7vw;
+        padding: 0 10%;
+        cursor: pointer;
+    }
+}
 
 main form label {
     display: flex;
@@ -230,6 +264,15 @@ main form label input {
         margin-bottom: 5%;
     }
 }
+@media screen and (min-width: 801px) and (max-width: 1050px) {
+    main form label input {
+        padding: 2vw 4vw;
+        height: 5vw;
+        border-radius: 1vw;
+        font-size: 1.3vw;
+        margin-bottom: 2%;
+    }
+}
 
 main form input {
     cursor: pointer;
@@ -261,6 +304,18 @@ main form input {
         padding: 2.5vw 6vw 4.5vw 6vw;
         border-radius: 2vw;
         font-size: 2vw;
+        color: rgba(225, 86, 34, 1);
+        border: none;
+        outline: none;
+    }
+}
+@media screen and (min-width: 801px) and (max-width: 1050px) {
+    main form input {
+        margin-top: 3%;
+        cursor: pointer;
+        padding: 1.7vw 4vw 3.4vw 4vw;
+        border-radius: 1vw;
+        font-size: 1.3vw;
         color: rgba(225, 86, 34, 1);
         border: none;
         outline: none;
