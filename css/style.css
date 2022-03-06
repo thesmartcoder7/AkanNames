@@ -82,7 +82,7 @@ main .infobox {
 
 @media screen and (max-width: 500px) {
     main .infobox {
-        width: 80vw;
+        width: 90vw;
         height: 90vh;
         overflow: scroll;
         padding: 10% 5%;
