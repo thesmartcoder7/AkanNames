@@ -1,8 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&display=swap");
+
 /* - - - browser resets - - - */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Cantarell", sans-serif;
 }
 
 main {
@@ -183,8 +186,6 @@ main .infobox h3 {
 }
 
 main form {
-    -webkit-appearance: none;
-    appearance: none;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -246,8 +247,6 @@ main form label input {
     color: rgba(225, 86, 34, 1);
     border: none;
     outline: none;
-    -webkit-appearance: none;
-    appearance: none;
 }
 
 @media screen and (max-width: 500px) {
@@ -287,8 +286,6 @@ main form input {
     color: rgba(225, 86, 34, 1);
     border: none;
     outline: none;
-    -webkit-appearance: none;
-    appearance: none;
 }
 
 @media screen and (max-width: 500px) {
