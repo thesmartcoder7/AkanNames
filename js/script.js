@@ -1,10 +1,10 @@
-// DOM variables
+/* - - - declare DOM variables - - - */
 let title = document.querySelector(".title");
 let description = document.querySelector(".description");
 let callToAction = document.querySelector(".cta");
 let refresgBtn = document.querySelector(".button");
 
-// form variables
+/* - - - declare form variables - - - */
 let form = document.querySelector("#dateform");
 let date = document.querySelector("#date");
 
@@ -18,7 +18,7 @@ const daysOfWeek = [
     "saturday",
 ];
 
-// A function to get gender related day personalities
+/* - - - get gender related day personalities - - - */
 function getPersonality(gender, day) {
     const maleDayNames = [
         "kwasi",
@@ -40,7 +40,7 @@ function getPersonality(gender, day) {
         "ama",
     ];
 
-    // male day personalities
+    /* - - - declare male day personalities - - - */
     let maleDays = [
         "Sunday born males are also vibrant characters as they are depicted by their core character trait they have the strength and are often resilient when pursuing new ventures. Sunday born males can be sensitive people which, can make them overreact in some situations. However, beneath all their sensitivity, you will find happy, passionate souls.",
         "Monday born males are sensitive at heart and emotional. They are dynamic individuals which, makes them open to hearing ideas from people. They are the perfect type of people to hear unbiased opinions from. Though they can be emotional, they also love fun times and can be generous.",
@@ -51,7 +51,7 @@ function getPersonality(gender, day) {
         "Kwame is straightforward. He is steadfast in his ability to pick a cause and remain dedicated to it. He is very focused and may come off as abrasive. They often hold on to traditional beliefs and can be very disciplined.",
     ];
 
-    // female day personalities
+    /* - - - declare female day personalities - - - */
     let femaleDays = [
         "Sunday born females are principled, they often say things as it is, they are fearless and may border on the edge of arrogance because they do not mince their words when stating their opinions on a subject. Beneath the hard exterior, however, Sunday born females can be delightfully warm and fun to be around when you get to know them.",
         "Monday born females love to have fun and are full of life. They have an inherent ability to put people's interests above their own as they love to care for others. Being peaceful people, they love to see justice done where there is perceived injustice, and they can because of their over caring nature be stubborn and persistent.",
@@ -62,6 +62,7 @@ function getPersonality(gender, day) {
         "Your Ama is 100% about helping others and can be very humane. You often find her willing to lend a helping hand to those in need. She is very selfless and is one to believe in only the positives about others. Your Ama may appear out of touch with reality because they sometimes see what they want to believe in others and not what the true nature of that person is.",
     ];
 
+    /* - - - check the user gender - - - */
     if (gender === "male") {
         return [maleDays[day], maleDayNames[day]];
     } else {
@@ -69,7 +70,7 @@ function getPersonality(gender, day) {
     }
 }
 
-// A function to get the day of the week
+/* - - - get the day of the week - - - */
 function getWeekDay(date) {
     let fullDate = new Date(
         Number(date.substring(0, 4)),
@@ -80,21 +81,37 @@ function getWeekDay(date) {
     return fullDate.getDay();
 }
 
-// A form submission triggered function
+/* - - - validate user input - - - */
+function validate(date, gender) {
+    if (date === "") {
+        if (gender === "") {
+            return [false, "You can't submit an empty form!"];
+        }
+        return [false, "Please provide a valid date!"];
+    } else if (gender === "") {
+        return [false, "Please fill in your gender!"];
+    } else {
+        return true;
+    }
+}
+
+/* - - - trigger form submission - - - */
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     let gender = form.gender.value;
-    if (date.value === "") {
-        alert("Please provide a valid date");
-        return;
-    } else if (gender === "") {
-        alert("Please fill in your gender");
+
+    /* - - - validate user input - - - */
+    if (validate(date.value, gender)[0] === false) {
+        alert(validate(date.value, gender)[1]);
         return;
     }
+
+    /* - - - store relevant data and call in relevant functions - - - */
     let day = getWeekDay(date.value);
     let weekDay = daysOfWeek[day];
     let personality = getPersonality(gender, day);
 
+    /* - - - give feedback to the user - - - */
     title.innerHTML = `Your Akan name is ${personality[1].replace(/^\w/, (c) =>
         c.toUpperCase()
     )}<br>( ${weekDay.replace(/^\w/, (c) => c.toUpperCase())} Born )`;
@@ -106,6 +123,7 @@ form.addEventListener("submit", (e) => {
     refresgBtn.style = "display: block; animation: appear 3s;";
 });
 
+/* - - - reload page after user clicks on the "try another name" button - - - */
 refresgBtn.addEventListener("click", () => {
     window.location.reload();
 });
