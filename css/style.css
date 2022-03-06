@@ -83,8 +83,9 @@ main .infobox {
 @media screen and (max-width: 500px) {
     main .infobox {
         width: 80vw;
-        height: auto;
-        padding: 15% 5%;
+        height: 90vh;
+        overflow: scroll;
+        padding: 10% 5%;
     }
 }
 @media screen and (min-width: 501px) and (max-width: 800px) {
@@ -343,4 +344,50 @@ main .infobox button {
     outline: none;
     cursor: pointer;
     margin-top: 3%;
+}
+
+@media screen and (max-width: 500px) {
+    main .infobox button {
+        align-self: center;
+        display: none;
+        padding: 5vw 10vw 10vw 10vw;
+        height: 3vw;
+        border-radius: 2vw;
+        font-size: 3.5vw;
+        color: rgba(225, 86, 34, 1);
+        border: none;
+        outline: none;
+        cursor: pointer;
+        margin-top: 3%;
+    }
+}
+@media screen and (min-width: 501px) and (max-width: 800px) {
+    main .infobox button {
+        align-self: center;
+        display: none;
+        padding: 2.5vw 5vw 5.5vw 5vw;
+        height: 3vw;
+        border-radius: 2vw;
+        font-size: 2.2vw;
+        color: rgba(225, 86, 34, 1);
+        border: none;
+        outline: none;
+        cursor: pointer;
+        margin-top: 3%;
+    }
+}
+@media screen and (min-width: 801px) and (max-width: 1050px) {
+    main .infobox button {
+        align-self: center;
+        display: none;
+        padding: 2.5vw 5vw 4.5vw 5vw;
+        height: 3vw;
+        border-radius: 2vw;
+        font-size: 1.5vw;
+        color: rgba(225, 86, 34, 1);
+        border: none;
+        outline: none;
+        cursor: pointer;
+        margin-top: 3%;
+    }
 }
