@@ -16,6 +16,13 @@
 
 This is an application that generates Ghanian names from the Akan heritage. It also gives information about an individuals personality. Visit [live site](https://thesmartcoder7.github.io/AkanNames/)
 
+## BDD 
+From the description,this application generated a user's Akan name using the given input.
+* In the case that the user leaves the form empty and tries to submit the form, the application should alert the user against submitting an empty form.
+* In the case that the user fills the date alone without filling the gender, the application should alert the user and ask the user to fill in their gender.
+* In the case that the user fills the gender alone without filling the date, the application should alert the user and ask the user to provide a valid date.
+* In the case that the user has provided all the proper details, the application should validate the input and generate the Akan name with their corresponding personality traits.
+
 ## Usage
 
 ### Requirements
