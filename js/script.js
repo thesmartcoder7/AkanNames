@@ -83,11 +83,14 @@ function getWeekDay(date) {
 
 /* - - - validate user input - - - */
 function validate(date, gender) {
+    let currentYear = new Date
     if (date === "") {
         if (gender === "") {
             return [false, "You can't submit an empty form!"];
         }
         return [false, "Please provide a valid date!"];
+    } else if (Number(date.substring(0, 4)) > currentYear.getFullYear()){
+        return [false, "Please enter a valid year"];
     } else if (gender === "") {
         return [false, "Please fill in your gender!"];
     } else {
