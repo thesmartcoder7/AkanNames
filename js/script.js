@@ -83,14 +83,24 @@ function getWeekDay(date) {
 
 /* - - - validate user input - - - */
 function validate(date, gender) {
-    let currentYear = new Date
+    let userDate = Number(date.substring(8, 10))
+    let userMonth = Number(date.substring(5, 7) - 1)
+    let userYear = Number(date.substring(0, 4))
+    let timeline = new Date
+    let currentDate = timeline.getDate()
+    let currentMonth = timeline.getMonth()
+    let currentYear = timeline.getFullYear()
     if (date === "") {
         if (gender === "") {
             return [false, "You can't submit an empty form!"];
         }
         return [false, "Please provide a valid date!"];
-    } else if (Number(date.substring(0, 4)) > currentYear.getFullYear()){
-        return [false, "Please enter a valid year"];
+    } else if (userYear > currentYear){
+        return [false, "Please don't enter a future year"];
+    } else if (userYear === currentYear && userMonth > currentMonth){
+        return [false, "Please don't enter a future month"];
+    } else if (userYear === currentYear && userMonth === currentMonth && userDate > currentDate) {
+        return [false, "Please don't enter a future date"];
     } else if (gender === "") {
         return [false, "Please fill in your gender!"];
     } else {
